@@ -1,0 +1,36 @@
+# -*-muttrc-*-
+
+color hdrdefault yellow black
+color quoted yellow black
+color signature yellow black
+color attachment red black
+color prompt brightmagenta black
+color message brightyellow black
+color error brightred black
+color indicator brightwhite red
+color status white blue
+color tree white black
+color normal white black
+color bold brightyellow black
+color markers red black
+color search white black
+color tilde brightmagenta black
+color index yellow black ~F
+color index green black "~N|~O"
+
+# Highlights inside the body of a message
+
+# URLs
+color body brightblue black "(http|https|ftp|news|telnet|finger)://[^ \">\t\r\n]*"
+color body brightblue black "mailto:[-a-z_0-9.]+@[-a-z_0-9.]+"
+color body brightblue black "news:[^ \">\t\r\n]*"
+
+# email addresses
+color body brightblue black "[-a-z_0-9.%$]+@[-a-z_0-9.]+\\.[-a-z][-a-z]+"
+
+# smilies and style
+color body brightwhite black " [;:]-*[)>(<|]"                                   # various smilies
+color body brightblue black "(^|[[:space:]])\\*[^[:space:]]+\\*([[:space:]]|$)" # *bold* text
+color body brightblue black "(^|[[:space:]])_[^[:space:]]+_([[:space:]]|$)"     # _underlined_ text
+color body brightblue black "(^|[[:space:]])/[^[:space:]]+/([[:space:]]|$)"     # /italic/ text
+

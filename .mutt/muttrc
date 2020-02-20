@@ -1,0 +1,75 @@
+
+bind generic,alias,attach,browser,editor,index,compose,pager,pgp,postpone ':' noop
+
+set my_password = `pass ageneau.org/paulo`
+
+set ssl_starttls = yes
+set ssl_force_tls = yes
+
+set folder = imaps://ageneau.org/
+set imap_user = paulo
+set imap_pass = $my_password
+set spoolfile = +INBOX
+mailboxes +INBOX
+set imap_check_subscribed
+
+unset imap_passive
+set imap_keepalive = 300
+set mail_check = 120
+set mail_check_stats
+
+set header_cache = ~/.cache/mutt
+#set message_cachedir = ~/.cache/mutt
+
+set record = +Sent
+set postponed = +Drafts
+
+set realname = "Paul-Louis Ageneau"
+set from = paul-louis@ageneau.org
+set use_from = yes
+
+set smtp_url = smtp://$imap_user@ageneau.org
+set smtp_pass = $imap_pass
+
+set query_command = "echo %s | xargs khard email --parsable --search-in-source-files --"
+bind editor <Tab> complete-query
+bind editor ^T    complete
+
+set sidebar_visible = yes
+set sidebar_width = 24
+set sidebar_format = "%B%* %?F? [%F]? %?N?%N?"
+set sidebar_sort_method = path
+bind index,pager \Cb sidebar-toggle-visible
+bind index,pager \Cp sidebar-prev
+bind index,pager \Cn sidebar-next
+bind index,pager \Co sidebar-open
+
+set strict_threads = yes
+set hide_thread_subject = no
+set sort = threads
+set sort_aux = last-date-received
+unset collapse_unread
+bind index - collapse-thread
+bind index _ collapse-all
+
+set index_format = "%Z %-14.14d %-20.20L (%?l?%4l&%4c?) %s"
+set date_format = "%d/%m/%y %H:%M"
+
+set send_charset = "us-ascii:utf-8"
+
+set mailcap_path = "~/.mutt/mailcap"
+auto_view text/html
+alternative_order text/plain text/enriched text/html
+
+source ~/.mutt/colors.rc
+
+source ~/.mutt/gpg.rc
+set pgp_default_key = paul-louis@ageneau.org
+set pgp_self_encrypt = yes
+set pgp_use_gpg_agent = yes
+set crypt_autosign = no
+set crypt_replyencrypt = yes
+set crypt_replysign = yes
+set crypt_replysignencrypted = yes
+set crypt_opportunistic_encrypt = yes
+
