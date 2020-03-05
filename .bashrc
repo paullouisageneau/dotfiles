@@ -26,6 +26,7 @@ alias ls='ls --color=auto'
 alias mutt='neomutt'
 alias mpvf='mpv --fs'
 alias autoremove='yay -Rcs $(yay -Qdtq)'
+alias audit='arch-audit'
 alias cmake='cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON'
 alias dotfiles='git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
 

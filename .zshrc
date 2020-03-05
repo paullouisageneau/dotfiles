@@ -73,6 +73,7 @@ alias ssh='TERM=xterm-256color ssh'
 alias mutt='neomutt'
 alias mpvf='mpv --fs'
 alias autoremove='yay -Rcs $(yay -Qdtq)'
+alias audit='arch-audit'
 alias cmake='cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON'
 alias dotfiles='git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
 
@@ -109,7 +110,7 @@ alias gfa='git fetch --all --prune'
 alias gm='git merge'
 alias gma='git merge --abort'
 alias gmc='git merge --continue'
-alias gr='git rebase --preserve-merges'
+alias gr='git rebase --rebase-merges'
 alias gra='git rebase --abort'
 alias grc='git rebase --continue'
 alias grs='git reset'
@@ -124,4 +125,7 @@ alias gsts='git stash save'
 
 export EDITOR='vim'
 export VISUAL='vim'
+
+export PATH=$PATH:~/scripts
+export PATH="$PATH:~/.local/bin"
 
