@@ -198,16 +198,16 @@ if executable('ccls')
     autocmd FileType cc setlocal omnifunc=lsp#complete
 endif
 
-if executable('clangd')
-    autocmd User lsp_setup call lsp#register_server({
-        \ 'name': 'clangd',
-        \ 'cmd': {server_info->['clangd']},
-        \ 'whitelist': ['c', 'cpp', 'cc', 'objc', 'objcpp'],
-        \ })
-    autocmd FileType c setlocal omnifunc=lsp#complete
-    autocmd FileType cpp setlocal omnifunc=lsp#complete
-    autocmd FileType cc setlocal omnifunc=lsp#complete
-endif
+"if executable('clangd')
+"    autocmd User lsp_setup call lsp#register_server({
+"        \ 'name': 'clangd',
+"        \ 'cmd': {server_info->['clangd']},
+"        \ 'whitelist': ['c', 'cpp', 'cc', 'objc', 'objcpp'],
+"        \ })
+"    autocmd FileType c setlocal omnifunc=lsp#complete
+"    autocmd FileType cpp setlocal omnifunc=lsp#complete
+"    autocmd FileType cc setlocal omnifunc=lsp#complete
+"endif
 
 if executable('pyls')
     autocmd User lsp_setup call lsp#register_server({
