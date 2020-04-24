@@ -127,5 +127,8 @@ export EDITOR='vim'
 export VISUAL='vim'
 
 export PATH=$PATH:~/scripts
-export PATH="$PATH:~/.local/bin"
+export PATH=$PATH:~/.local/bin
+
+# Emscripten SDK
+source ~/src/emsdk/emsdk_env.sh > /dev/null
 
