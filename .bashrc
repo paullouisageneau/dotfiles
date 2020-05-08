@@ -64,7 +64,7 @@ alias gfa='git fetch --all --prune'
 alias gm='git merge'
 alias gma='git merge --abort'
 alias gmc='git merge --continue'
-alias gr='git rebase --rebase-merges'
+alias gr='git rebase'
 alias gra='git rebase --abort'
 alias grc='git rebase --continue'
 alias grs='git reset'
@@ -76,6 +76,10 @@ alias gstd='git stash drop'
 alias gstl='git stash list'
 alias gstp='git stash pop'
 alias gsts='git stash save'
+alias gcp='git cherry-pick'
+alias gcpa='git cherry-pick --abort'
+alias gcpc='git cherry-pick --continue'
+alias gmt='git mergetool'
 
 source /usr/share/git/completion/git-completion.bash
 __git_complete dotfiles _git
@@ -91,8 +95,8 @@ __git_complete gm  _git_merge
 __git_complete gr  _git_rebase
 __git_complete grs _git_reset
 __git_complete gst _git_stash
+__git_complete gcp  _git_cherry_pick
 __git_complete gpo _git_branch # Hack to get branch completion
-
 
 export EDITOR="vim"
 export VISUAL="vim"
