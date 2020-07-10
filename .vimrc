@@ -28,6 +28,8 @@ Plugin 'leafgarland/typescript-vim'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'tikhomirov/vim-glsl'
+Plugin 'rust-lang/rust.vim'
+
 
 " All plugins must be added before the following line
 call vundle#end()            " required
@@ -215,6 +217,14 @@ if executable('pyls')
         \ 'cmd': {server_info->['pyls']},
         \ 'whitelist': ['python'],
         \ 'workspace_config': {'pyls': {'plugins': {'pycodestyle': {'maxLineLength': 99, 'ignore': ['E402']}}}},
+        \ })
+endif
+
+if executable('rls')
+    autocmd User lsp_setup call lsp#register_server({
+        \ 'name': 'rls',
+        \ 'cmd': {server_info->['rls']},
+        \ 'whitelist': ['rust'],
         \ })
 endif
 
