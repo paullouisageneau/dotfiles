@@ -105,7 +105,7 @@ export PATH=$PATH:~/scripts
 export PATH=$PATH:~/.local/bin
 
 # Emscripten SDK
-source ~/src/emsdk/emsdk_env.sh > /dev/null
+source ~/src/emsdk/emsdk_env.sh &> /dev/null
 
 notes() {
   if [ ! -z "$1" ]; then
