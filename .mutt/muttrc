@@ -35,7 +35,7 @@ set query_command = "echo %s | xargs khard email --parsable --search-in-source-f
 bind editor <Tab> complete-query
 bind editor ^T    complete
 
-set sidebar_visible = yes
+set sidebar_visible = no
 set sidebar_width = 24
 set sidebar_format = "%B%* %?F? [%F]? %?N?%N?"
 set sidebar_sort_method = path
