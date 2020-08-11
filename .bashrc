@@ -101,13 +101,13 @@ __git_complete gpo _git_branch # Hack to get branch completion
 export EDITOR="vim"
 export VISUAL="vim"
 
-export PATH=$PATH:~/scripts
-export PATH=$PATH:~/.local/bin
+export PATH="$PATH:~/scripts:~/.local/bin:~/.node_modules/bin"
+export MANPATH="${MANPATH-$(manpath)}:~/.node_modules/share/man"
 
 # Emscripten SDK
 source ~/src/emsdk/emsdk_env.sh &> /dev/null
 
-notes() {
+note() {
   if [ ! -z "$1" ]; then
     # Using the "$@" here will take all parameters passed into
     # this function so we can place everything into our file.
