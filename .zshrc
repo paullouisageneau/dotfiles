@@ -130,9 +130,9 @@ alias gmt='git mergetool'
 export EDITOR='vim'
 export VISUAL='vim'
 
-export PATH="$PATH:~/scripts:~/.local/bin:~/.node_modules/bin"
+export PATH="$PATH:$HOME/scripts:$HOME/.local/bin:$HOME/.node_modules/bin"
 export MANPATH="${MANPATH-$(manpath)}:~/.node_modules/share/man"
 
 # Emscripten SDK
-source ~/src/emsdk/emsdk_env.sh > /dev/null
-
+#source ~/src/emsdk/emsdk_env.sh > /dev/null
+alias emsdk_env="source ~/src/emsdk/emsdk_env.sh"
