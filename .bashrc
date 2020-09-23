@@ -67,6 +67,9 @@ alias gmc='git merge --continue'
 alias gr='git rebase'
 alias gra='git rebase --abort'
 alias grc='git rebase --continue'
+alias grv='git revert'
+alias grva='git revert --abort'
+alias grvc='git revert --continue'
 alias grs='git reset'
 alias grsh='git reset --hard'
 alias gmv='git mv'
@@ -93,6 +96,7 @@ __git_complete gp  _git_push
 __git_complete gf  _git_fetch
 __git_complete gm  _git_merge
 __git_complete gr  _git_rebase
+__git_complete grv _git_revert
 __git_complete grs _git_reset
 __git_complete gst _git_stash
 __git_complete gcp  _git_cherry_pick
