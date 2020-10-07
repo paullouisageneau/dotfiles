@@ -79,7 +79,9 @@ function! TrimSpaces()
     %s/\s*$//
     ''
 endfunction
-autocmd BufWritePre * call TrimSpaces()
+"autocmd BufWritePre * call TrimSpaces()
+nnoremap <leader>t :call TrimSpaces()<CR>
+
 
 " Reset position on file opening
 au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
@@ -93,7 +95,8 @@ if filereadable(g:clang_format_py)
         let l:formatdiff = 1
         execute "pyf ".g:clang_format_py
     endfunction
-    autocmd BufWritePre *.h,*.hh,*.hpp,*.c,*.cc,*.cpp call ClangFormatDiff()
+    "autocmd BufWritePre *.h,*.hh,*.hpp,*.c,*.cc,*.cpp call ClangFormatDiff()
+    nnoremap <leader>f :call ClangFormatDiff()<CR>
 endif
 
 " vim-lsp bindings
