@@ -79,9 +79,10 @@ function! TrimSpaces()
     %s/\s*$//
     ''
 endfunction
-"autocmd BufWritePre * call TrimSpaces()
 nnoremap <leader>t :call TrimSpaces()<CR>
-
+map <A-t> :call TrimSpaces()<CR>
+imap <A-t> <c-o> :call TrimSpaces()<CR>
+"autocmd BufWritePre * call TrimSpaces()
 
 " Reset position on file opening
 au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
@@ -89,14 +90,18 @@ au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g
 " Format C++
 let g:clang_format_py = "/usr/share/clang/clang-format.py"
 if filereadable(g:clang_format_py)
-    execute "map <A-f> :pyf ".g:clang_format_py."<cr>"
-    execute "imap <A-f> <c-o>:pyf ".g:clang_format_py."<cr>"
+    function! ClangFormat()
+        let l:formatdiff = 0
+        execute "pyf ".g:clang_format_py
+    endfunction
     function! ClangFormatDiff()
         let l:formatdiff = 1
         execute "pyf ".g:clang_format_py
     endfunction
-    "autocmd BufWritePre *.h,*.hh,*.hpp,*.c,*.cc,*.cpp call ClangFormatDiff()
     nnoremap <leader>f :call ClangFormatDiff()<CR>
+    map <A-f> :call ClangFormat()<CR>
+    imap <A-f> <c-o> :call ClangFormat()<CR>
+    "autocmd BufWritePre *.h,*.hh,*.hpp,*.c,*.cc,*.cpp call ClangFormatDiff()
 endif
 
 " vim-lsp bindings
@@ -138,7 +143,7 @@ nnoremap <leader>ls :Explore<CR>
 
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<cr>"
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<CR>"
 imap <c-space> <Plug>(asyncomplete_force_refresh)
 autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
 set completeopt-=preview
