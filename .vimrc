@@ -81,7 +81,7 @@ function! TrimSpaces()
 endfunction
 nnoremap <leader>t :call TrimSpaces()<CR>
 map <A-t> :call TrimSpaces()<CR>
-imap <A-t> <c-o> :call TrimSpaces()<CR>
+imap <A-t> <c-o>:call TrimSpaces()<CR>
 "autocmd BufWritePre * call TrimSpaces()
 
 " Reset position on file opening
@@ -99,7 +99,7 @@ if filereadable(g:clang_format_py)
     endfunction
     nnoremap <leader>f :call ClangFormatDiff()<CR>
     map <A-f> :call ClangFormat()<CR>
-    imap <A-f> <c-o> :call ClangFormat()<CR>
+    imap <A-f> <c-o>:call ClangFormat()<CR>
     "autocmd BufWritePre *.h,*.hh,*.hpp,*.c,*.cc,*.cpp call ClangFormatDiff()
 endif
 
