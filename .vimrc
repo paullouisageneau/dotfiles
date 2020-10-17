@@ -93,11 +93,15 @@ if filereadable(g:clang_format_py)
     function! ClangFormat()
         execute "pyf ".g:clang_format_py
     endfunction
+    function! ClangFormatAll()
+        let l:lines = "all"
+        execute "pyf ".g:clang_format_py
+    endfunction
     function! ClangFormatDiff()
         let l:formatdiff = 1
         execute "pyf ".g:clang_format_py
     endfunction
-    nnoremap <leader>f :call ClangFormatDiff()<CR>
+    nnoremap <leader>f :call ClangFormatAll()<CR>
     map <A-f> :call ClangFormat()<CR>
     imap <A-f> <c-o>:call ClangFormat()<CR>
     "autocmd BufWritePre *.h,*.hh,*.hpp,*.c,*.cc,*.cpp call ClangFormatDiff()
