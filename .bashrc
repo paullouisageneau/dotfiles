@@ -84,6 +84,7 @@ alias gsts='git stash save'
 alias gcp='git cherry-pick'
 alias gcpa='git cherry-pick --abort'
 alias gcpc='git cherry-pick --continue'
+alias gsub='git submodule'
 alias gmt='git mergetool'
 
 source /usr/share/git/completion/git-completion.bash
@@ -102,6 +103,7 @@ __git_complete grv _git_revert
 __git_complete grs _git_reset
 __git_complete gst _git_stash
 __git_complete gcp  _git_cherry_pick
+__git_complete gsub _git_submodule
 __git_complete gpo _git_branch # Hack to get branch completion
 
 export EDITOR="vim"

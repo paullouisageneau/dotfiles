@@ -130,6 +130,7 @@ alias gsts='git stash save'
 alias gcp='git cherry-pick'
 alias gcpa='git cherry-pick --abort'
 alias gcpc='git cherry-pick --continue'
+alias gsub='git submodule'
 alias gmt='git mergetool'
 
 export EDITOR='vim'
