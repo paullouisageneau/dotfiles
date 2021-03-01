@@ -88,8 +88,8 @@ alias gsub='git submodule'
 alias gmt='git mergetool'
 
 source /usr/share/git/completion/git-completion.bash
-__git_complete dotfiles _git
-__git_complete g   _git
+__git_complete g __git_main
+__git_complete dotfiles __git_main
 __git_complete gi  _git_init
 __git_complete gco _git_checkout
 __git_complete gb  _git_branch
