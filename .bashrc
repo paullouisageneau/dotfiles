@@ -110,11 +110,11 @@ export EDITOR="vim"
 export VISUAL="vim"
 
 export PATH="$PATH:$HOME/scripts:$HOME/.local/bin:$HOME/.node_modules/bin"
-export MANPATH="${MANPATH-$(manpath)}:~/.node_modules/share/man"
+export MANPATH="${MANPATH-$(manpath)}:$HOME/.node_modules/share/man"
 
 # Emscripten SDK
-#source ~/src/emsdk/emsdk_env.sh &> /dev/null
-alias emsdk_env="source ~/src/emsdk/emsdk_env.sh"
+#source $HOME/src/emsdk/emsdk_env.sh &> /dev/null
+alias emsdk_env="source $HOME/src/emsdk/emsdk_env.sh"
 
 note() {
   if [ ! -z "$1" ]; then
