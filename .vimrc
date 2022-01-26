@@ -83,7 +83,7 @@ endfunction
 nnoremap <leader>t :call TrimSpaces()<CR>
 map <A-t> :call TrimSpaces()<CR>
 imap <A-t> <c-o>:call TrimSpaces()<CR>
-"autocmd BufWritePre * call TrimSpaces()
+autocmd BufWritePre * call TrimSpaces()
 
 " Reset position on file opening
 au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
