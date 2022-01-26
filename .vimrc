@@ -10,6 +10,7 @@ set viminfo='100,<1000,s100,h
 
 filetype off " required
 syntax on
+set number
 set title
 
 " set the runtime path to include Vundle and initialize
