@@ -92,15 +92,15 @@ au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g
 let g:clang_format_py = "/usr/share/clang/clang-format.py"
 if filereadable(g:clang_format_py)
     function! ClangFormat()
-        execute "pyf ".g:clang_format_py
+        execute "py3f ".g:clang_format_py
     endfunction
     function! ClangFormatAll()
         let l:lines = "all"
-        execute "pyf ".g:clang_format_py
+        execute "py3f ".g:clang_format_py
     endfunction
     function! ClangFormatDiff()
         let l:formatdiff = 1
-        execute "pyf ".g:clang_format_py
+        execute "py3f ".g:clang_format_py
     endfunction
     nnoremap <leader>f :call ClangFormatAll()<CR>
     map <A-f> :call ClangFormat()<CR>
