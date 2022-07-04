@@ -109,7 +109,7 @@ __git_complete gpo _git_branch # Hack to get branch completion
 export EDITOR="vim"
 export VISUAL="vim"
 
-export PATH="$PATH:$HOME/scripts:$HOME/.local/bin:$HOME/.node_modules/bin"
+export PATH="$PATH:$HOME/scripts:$HOME/.local/bin:$HOME/.node_modules/bin;$HOME/.cargo/bin"
 export MANPATH="${MANPATH-$(manpath)}:$HOME/.node_modules/share/man"
 
 # Emscripten SDK
