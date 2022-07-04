@@ -246,11 +246,14 @@ if executable(g:eslint_bin)
     let g:syntastic_javascript_eslint_exec = g:eslint_bin
 endif
 
-" Hack to remap Alt key escaped by gnome terminal
-let c='a'
-while c <= 'z'
-  exec "set <A-".c.">=\e".c
-  exec "imap \e".c." <A-".c.">"
-  let c = nr2char(1+char2nr(c))
-endwhile
-set timeout ttimeoutlen=50
+if !has('nvim')
+    " Hack to remap Alt key escaped by gnome terminal
+    let c='a'
+    while c <= 'z'
+    exec "set <A-".c.">=\e".c
+    exec "imap \e".c." <A-".c.">"
+    let c = nr2char(1+char2nr(c))
+    endwhile
+    set timeout ttimeoutlen=50
+endif
+
