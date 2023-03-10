@@ -25,7 +25,7 @@ alias vi='vim'
 alias ls='ls --color=auto'
 alias mutt='neomutt'
 alias mpvf='mpv --fs'
-alias autoremove='yay -Rcs $(yay -Qdtq)'
+alias autoremove='sudo pacman -Rcs $(pacman -Qdtq)'
 alias audit='arch-audit'
 alias cmake='cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON'
 alias dotfiles='git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
@@ -33,6 +33,8 @@ alias dotfiles='git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
 alias s='ssh'
 alias z='zsh'
 complete -F _known_hosts s
+
+alias youtube-dl='yt-dlp'
 
 alias g='git'
 alias gi='git init'
