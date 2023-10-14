@@ -87,6 +87,7 @@ alias gcp='git cherry-pick'
 alias gcpa='git cherry-pick --abort'
 alias gcpc='git cherry-pick --continue'
 alias gsub='git submodule'
+alias gsubu='git submodule update --init --recursive'
 alias gmt='git mergetool'
 
 source /usr/share/git/completion/git-completion.bash
